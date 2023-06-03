@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>数字电视期末大纲.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="%E4%B8%80%E5%A1%AB%E7%A9%BA%E9%A2%98">一、填空题</h1>
+<ol>
+<li>
+<p>数字电视分<em><strong>标准清晰度电视</strong></em>和<em><strong>高清清晰度电视</strong></em>。</p>
+</li>
+<li>
+<p>模拟视频信号通过<em><strong>采样</strong></em>、<em><strong>量化</strong></em>后转换为二进制数字信号的过程称为模拟/数字转换。</p>
+</li>
+<li>
+<p>多路复用分为<em><strong>节目复用</strong></em>和<em><strong>系统复用</strong></em>两种。前者是将一路数字电视节目的<em><strong>音频</strong></em>、<em><strong>视频</strong></em>和<em><strong>数据</strong></em>等各种媒体流按照一定的方法时分复用成一个单一的数据流。后者是各路数字电视节目的数据流进行再复用，实现节目间的<em><strong>动态带宽分配</strong></em>，并提供各种增值业务。</p>
+</li>
+<li>
+<p>数字电视广播系统由<em><strong>信源编码</strong></em>、<em><strong>多路复用</strong></em>、<em><strong>信道编码</strong></em>、<em><strong>调制</strong></em>、<em><strong>信道</strong></em>和<em><strong>接收机</strong></em>等六部分组成。</p>
+</li>
+<li>
+<p>常见的数字电视标准有<em><strong>ATSC</strong></em>、<em><strong>DVB</strong></em>、<em><strong>ISDB</strong></em>和<em><strong>DTMB</strong></em>。</p>
+</li>
+<li>
+<p>视频数据主要存在<em><strong>空间冗余</strong></em>、<em><strong>时间冗余</strong></em>、<em><strong>结构冗余</strong></em>、<em><strong>知识冗余</strong></em>和<em><strong>视觉冗余</strong></em>。</p>
+</li>
+<li>
+<p>能量扩散也称为<em><strong>随机化</strong></em>、<em><strong>加扰</strong></em>或<em><strong>扰码</strong></em>。</p>
+</li>
+<li>
+<p>多路复用是将<em><strong>视频</strong></em>、<em><strong>音频</strong></em>和<em><strong>数据</strong></em>等各种媒体流按照一定的方法复用成一个节目的数据流。将多个节目的数据流再复用成单一的数据流的过程。</p>
+</li>
+<li>
+<p>信道编码常用的差错控制方式有<em><strong>前向纠错（FEC）</strong></em>、<em><strong>检错重发（ARQ）</strong></em>、<em><strong>反馈校验（TRQ）<em><strong>和</strong></em>混合纠错（HEC）</strong></em>。</p>
+</li>
+<li>
+<p>在数字电视技术中，常用的调制技术有<em><strong>正交振幅调制（QAM）</strong></em>、<em><strong>四相相移键控（QPSK）</strong></em>、<em><strong>网格编码调制（TCM）</strong></em>、<em><strong>OFDM与COFDM</strong></em>和残留边带调制（VSB）等。</p>
+</li>
+<li>
+<p>目前数字电视广播有三个相对成熟的标准制式，<em><strong>欧洲的DVB</strong></em>、<em><strong>美国的ATSC</strong></em>和<em><strong>日本的ISDB</strong></em>。</p>
+</li>
+</ol>
+<h1 id="%E4%BA%8C%E7%AE%80%E8%BF%B0%E9%A2%98">二、简述题。</h1>
+<ol>
+<li>
+<p>与模拟电视相比，数字电视具有许多优点，请简述什么是数字电视以及数字电视的优点。</p>
+<p><strong>数字电视是一种利用数字信号传输技术来传送电视信号的电视广播系统，相比于模拟电视，数字电视具有以下优点，图像传输质量较高、具有数字环绕立体声伴音、频谱资源利用率高、多信息多功能、设备可靠维护简单、节省发送功率覆盖范围广、易于实现条件接收，是电视广播技术的重要发展方向。</strong></p>
+</li>
+<li>
+<p>MPEG对視领数据规定了层次结构。共分为六层，这六层分别是什么？分别简述这六层的作用。</p>
+<p><strong>视频序列。视频序列也称图像序列，它是随机选取节目的一个基本单元。从节内容看，一个视频序列大致对应于一个镜头。切换一个镜头，即表示开始一个新的序列。</strong></p>
+<p><strong>图像组。图像组是将一个图像序列中连续的几个图像组成一个小组，简称 GOP它是对编码后的视频码流进行编辑存取的基本单元。</strong></p>
+<p><strong>图像。图像是一个独立的显示单元，也是图像编码的基本单元，可分为I、P和B三种编码图像</strong></p>
+<p><strong>像条。像条是发生误码且不可纠正时，数据重新获得同步，从而能正常解码的基本单元。像条由一系列连续的宏块组成。像条的第一和最后一个宏块应处在同一水平宏块排内。</strong></p>
+<p><strong>宏块。宏块是运动预测的基本单元。运动估计以宏块为单位，借此得到最佳匹配宏块的运动矢量。运动预测只对亮度阵列进行，对应的色差阵列其运动估计使用和亮度阵列相同的运动矢量。</strong></p>
+<p><strong>块又称像块，是DCT变换的基本单元。一个宏块可以划分成若干个8×8像素的阵列，简称为块，它可以是亮度块或色差信号块。像块经过 DCT 变换后得到的 64 个DCT 系数阵列可称为系数块。</strong></p>
+</li>
+<li>
+<p>信道编码中常出現的两种差错的是什么？ 简述其合义。</p>
+<p><strong>在信道编码中，常常会出现两种差错，分别是随机差错和突发差错。</strong></p>
+<p><strong>1随机差错：随机差错是指出现在信道中的随机噪声对信号造成的影响，通常是由于信道传输环境的不稳定性和噪声干扰引起的。随机差错的出现是随机的、不可预测的，会对信号的完整性和准确性造成影响。</strong></p>
+<p><strong>2突发差错：突发差错是指在信道中出现的连续多个比特或符号错误，通常是由于信道传输环境的不稳定性、干扰或遮挡等因素引起的。突发差错的出现是周期性的、可预测的，对信号的完整性和准确性造成的影响比随机差错更严重。</strong></p>
+</li>
+<li>
+<p>什么是预测编码？</p>
+<p><strong>基于图像的统计特性进行数据压缩的基本方法就是预测编码。</strong></p>
+<p><strong>预测编码一般分为帧内预测和帧间预测两种。</strong></p>
+<p><strong>1. 帧内预测：帧内预测是指在当前帧中，对每一个像素点的像素值进行预测，预测的依据通常是在当前像素点周围的邻域或者同一帧中相邻的像素点的像素值。预测误差可以通过当前像素点的像素值和预测值之差来计算，然后进行编码和传输。帧内预测一般适用于静态图像或者运动较小的图像。</strong></p>
+<p><strong>2. 帧间预测：帧间预测是指将当前帧中的像素值预测为前一帧或前几帧中相同位置的像素值，然后将预测误差进行编码和传输。帧间预测可以利用视频序列中的时间相关性，对运动区域进行预测，从而实现更高的压缩比和更高的视频质量。帧间预测一般适用于运动较大的视频图像，如运动视频、动画等。</strong></p>
+</li>
+<li>
+<p>什么是多媒休信号。多媒体技术的特征是什么？</p>
+<p><strong>多媒体是指两种或两种以上的媒体。媒体是指携带信息的载体，通常应该包括图像和声音，可能还有文宇、符号、图形、动面、图片等等。：</strong></p>
+<p><strong>多媒体信号应具有以下三个特征：</strong>
+<strong>综合性：多媒体信号应是相互有关的多种媒体的信号的综合。</strong></p>
+<p><strong>交互性：通信双方能充分地进行信息传送或交流，能获取、处理、编辑、存储、展示这些信息媒体。</strong></p>
+<p><strong>同步性：多种媒体能同步地、协调地传送信息。</strong></p>
+<p><strong>数字化：将模拟信号转换为数字信号，实现数字化处理和传输，提高信息的质量和可靠性。</strong></p>
+</li>
+</ol>
+<h1 id="%E4%B8%89%E9%87%8D%E7%82%B9%E5%8E%9F%E7%90%86%E5%9B%BE%E6%A1%86%E5%9B%BE">三、重点原理图框图</h1>
+<ol>
+<li>
+<p>MPEG-2原理框图以及简述编码过程。</p>
+<p>MPEG-2的原理框图如下所示：</p>
+<p><img src="MPEG-2.jpg" alt="Alt text"></p>
+<p><strong>MPEG -2 编码器框图如图所示，两个双向选择开关由编码控制都CC控制，当它们同时接到上边时，编码器工作在帧内编码模式，输人信号直接进行DCT 麥换，经过量化处理后丹进行变字长编码 VLC，得到最后的编码输出。当双向开关同时接到下方时，编的希利用仔储在顺存储器FM 中的上一帧图像进行帧间预测，将输人信号与预测信号相减后，对顶测识差进行DCT 变换，经过量化处理后再进行变字长编码VLC，得到敢后的编码输出。此时，编码器工作在帧间编码模式，是一个帧问预测与 DCT 组成的混合编的器。还有还动估计和补偿处理 MEP，可改善帧间预测的效果。为丁使解码器能正确地解的，編码器的工作状态必须即时通知解码端，为此每个编码模式和控制参数等辅助信息也要进行编码传输。</strong></p>
+</li>
+<li>
+<p>QPSK调制过程方框图及简述其过程。</p>
+<p><em><strong>下面是QPSK调制的方框图，它展示了QPSK调制的过程：</strong></em></p>
+<p><img src="QPSK.jpg" alt="Alt text"></p>
+<p>上图是 QPSK 调制器的原理框图，码率为R的数宇序列$S(t)$经分裂器分裂为码率为R/2的I、Q信号，再由I、Q信号生成幅度为一A~A 的双极性不归零序列 $Re（t）$、$Im（t）$，$Re(t)$利$Im(t)$分别对相互正交的两个载波$cosωct$ 和 $cos（ωct+\frac π2）= -sinωct$进行ASK(幅度键控)调制，然后相加得到已调信号 $S_{QPSK} (t)$，即$S_{QPSK} (t) = Re(t) cosω_ct - Im(t) sinω_ct$</p>
+</li>
+<li>
+<p>条件系统方框图并简述DVB条件接收系统的安全性。</p>
+<p><em><strong>下面是DVB条件系统框图</strong></em></p>
+<p><img src="条件接收系统.jpg" alt="Alt text"></p>
+<p>CA 系统的关键是安全性。在全数字 CA 系统中，一般采用三级密钥体制。CA 系统的加扰对象是数据流，要求实时加扰，要采用能满足实时性要求的流密码 (StreamCipher)算法</p>
+</li>
+<li>
+<p>正交幅度调制QAM的调制过程的方框图级简述其过程。</p>
+<p>下面是QAM调制的方框图，它展示了QAM调制的过程：</p>
+<p><img src="QAM.jpg" alt="Alt text"></p>
+<p>图5-1是MQAM正交振幅调制方框图。调制信号S由分裂器(串/并变换)分成I
+/Q两路信号，再经2-m 电平变换器以2电平信号变成m电平信号$X(t
+)$、$Y(t)$，用$X(t)$、$Y(t)$对正交的两个载波$cosω_ct$和$sinω_ct$ 进行调幅，再相加得到已调信号 MQAM。</p>
+</li>
+</ol>
+
+</body>
+</html>
